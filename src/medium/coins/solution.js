@@ -33,21 +33,15 @@
 function coinConverter(number) {
   const coinDenominations = [100, 25, 10, 5, 1]
   const numberOfCoins = []
-  let typesOfCoins = {
-    '100': undefined,
-    '25': undefined,
-    '10': undefined,
-    '5': undefined,
-    '1': undefined
-  }
+
+// typesOfCoins[100] = numberOfCoins[0]
+
   coinDenominations.forEach((coin) => {
     const counter = Math.floor(number / coin)
-    typesOfCoins[100] = numberOfCoins[0]
     number -= counter * coin
-  })
-  
-  console.log(numberOfCoins)
-  console.log(typesOfCoins)
-  return numberOfCoins
+    numberOfCoins.push(`${counter} * ${coin}`)
+})
+console.log(numberOfCoins)
+return numberOfCoins
 }
 coinConverter(55)
