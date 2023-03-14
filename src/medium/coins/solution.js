@@ -16,17 +16,38 @@
 //     --> return list of coins
 //         --> as string, showing multiples of each coin value used
 
-coinDenominations = [100, 25, 10, 5, 1]
+// coinDenominations = [100, 25, 10, 5, 1]
 
-const coinConverter = (number) => {
-    for (i = 0; i <= coinDenominations.length-1; i++) {
-        let currentValue = []
-        // if (currentValue < number) {
+// const coinConverter = (number) => {
+//     for (i = 0; i <= coinDenominations.length-1; i++) {
+//         let currentValue = []
+//         // if (currentValue < number) {
 
-        // }
-        currentValue = number - coinDenominations[i]
-console.log('what is the current value? -', currentValue)
-    }
+//         // }
+//         currentValue = number - coinDenominations[i]
+// console.log('what is the current value? -', currentValue)
+//     }
 
+// }
+// coinConverter(101)
+function coinConverter(number) {
+  const coinDenominations = [100, 25, 10, 5, 1]
+  const numberOfCoins = []
+  let typesOfCoins = {
+    '100': undefined,
+    '25': undefined,
+    '10': undefined,
+    '5': undefined,
+    '1': undefined
+  }
+  coinDenominations.forEach((coin) => {
+    const counter = Math.floor(number / coin)
+    typesOfCoins[100] = numberOfCoins[0]
+    number -= counter * coin
+  })
+  
+  console.log(numberOfCoins)
+  console.log(typesOfCoins)
+  return numberOfCoins
 }
-coinConverter(101)
+coinConverter(55)
