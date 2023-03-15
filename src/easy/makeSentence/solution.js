@@ -15,7 +15,19 @@
 // 4 - return the edited sentence
 //     --> return output
 
-let sentence = 'the quick brown fox jumped over the lazy dog'
-
-let output = sentence.toUpperCase(charAt[0])
-console.log(output)
+// function stringToSentence(aString) {
+//     return aString.charAt().toUpperCase() + aString.slice(1)
+//   }
+// console.log(stringToSentence('the quick brown fox jumped over the lazy dog'))
+  
+function stringToSentence(aString) {
+    const lastChar = aString[aString.length -1]
+    if (lastChar === '.' || lastChar === ',' ||lastChar === '!' ||lastChar === '?') {
+        newString = aString
+    } else {
+        newString = aString + '.'
+    }
+    return newString.charAt().toUpperCase() + newString.slice(1)
+  }
+console.log(stringToSentence('the quick brown fox jumped over the lazy dog'))
+  
