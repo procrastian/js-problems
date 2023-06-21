@@ -8,7 +8,6 @@ const Dice = [2, 4, 6, 8, 10, 12, 20, 100]
 function random(min, max) {
     return Math.floor(Math.random() * (max-min) + min)
 }
-console.log( Dice)
 
 //input die type + call random generator
 function roll(diceType) {
